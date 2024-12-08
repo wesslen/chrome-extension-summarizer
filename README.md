@@ -20,7 +20,7 @@ A Chrome extension that summarizes web pages using AI. The extension converts we
 
 1. Clone this repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/wesslen/chrome-extension-summarizer.git
 cd website-summarizer
 ```
 
