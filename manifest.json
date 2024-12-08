@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Website Summarizer",
+    "version": "1.0",
+    "description": "Summarizes websites using AI",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "host_permissions": [
+      "https://api.anthropic.com/*",
+      "https://r.jina.ai/*"
+    ],
+    "action": {
+      "default_popup": "popup/popup.html"
+    },
+    "background": {
+      "service_worker": "background/background.js"
+    },
+    "options_page": "options/options.html",
+    "icons": {
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  }
