@@ -20,10 +20,36 @@ function hideError() {
   errorDiv.style.display = 'none';
 }
 
+// Get selected style
+function getSelectedStyle() {
+  const selectedRadio = document.querySelector('input[name="style"]:checked');
+  return selectedRadio ? selectedRadio.value : 'elaborate';
+}
+
+// Save last used style
+function saveStyle(style) {
+  chrome.storage.local.set({ lastStyle: style });
+}
+
+// Load last used style
+function loadLastStyle() {
+  chrome.storage.local.get(['lastStyle'], (result) => {
+    if (result.lastStyle) {
+      const radio = document.querySelector(`input[value="${result.lastStyle}"]`);
+      if (radio) radio.checked = true;
+    }
+  });
+}
+
 // Open options page
 document.getElementById('openOptions').addEventListener('click', (e) => {
   e.preventDefault();
   chrome.runtime.openOptionsPage();
+});
+
+// Initialize popup
+document.addEventListener('DOMContentLoaded', () => {
+  loadLastStyle();
 });
 
 document.getElementById('summarize').addEventListener('click', async () => {
@@ -33,7 +59,7 @@ document.getElementById('summarize').addEventListener('click', async () => {
   // Check if API key is set
   const hasApiKey = await checkApiKey();
   if (!hasApiKey) {
-    showError('Please set your OpenAI API key in the extension options first.');
+    showError('Please set your API key in the extension options first.');
     return;
   }
 
@@ -42,11 +68,17 @@ document.getElementById('summarize').addEventListener('click', async () => {
   summaryDiv.className = 'loading';
 
   try {
-    // Get current tab URL
+    // Get current tab URL and selected style
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const style = getSelectedStyle();
+    
+    // Save the selected style
+    saveStyle(style);
+    
     const response = await chrome.runtime.sendMessage({
       action: 'summarize',
-      url: tab.url
+      url: tab.url,
+      style: style
     });
     
     if (response.error) {

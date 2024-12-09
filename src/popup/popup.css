@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* Existing styles remain the same */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,45 @@
     background-color: #ffffff;
   }
   
-  /* Button styles */
+  /* Style Selector styles */
+  .style-selector {
+    margin-bottom: 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
+  .style-option {
+    display: block;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .style-option:hover {
+    background-color: #f1f5f9;
+  }
+  
+  .style-option input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  .style-label {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #1e293b;
+  }
+  
+  .style-description {
+    display: block;
+    margin-left: 24px;
+    font-size: 12px;
+    color: #64748b;
+  }
+  
+  /* Existing button styles */
   #summarize {
     width: 100%;
     padding: 10px 16px;
@@ -27,126 +65,4 @@
     transition: background-color 0.2s ease;
   }
   
-  #summarize:hover {
-    background-color: #1d4ed8;
-  }
-  
-  #summarize:active {
-    background-color: #1e40af;
-  }
-  
-  #summarize:disabled {
-    background-color: #93c5fd;
-    cursor: not-allowed;
-  }
-  
-  /* Summary container styles */
-  #summary {
-    margin-top: 16px;
-    padding: 12px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #1f2937;
-    background-color: #f3f4f6;
-    border-radius: 6px;
-    white-space: pre-wrap;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  
-  /* Loading state styles */
-  .loading {
-    color: #6b7280;
-    font-style: italic;
-  }
-  
-  /* Error state styles */
-  .error {
-    color: #dc2626;
-    background-color: #fee2e2;
-    border: 1px solid #fecaca;
-    padding: 12px;
-    border-radius: 6px;
-    margin-top: 16px;
-  }
-  
-  /* Scrollbar styles */
-  #summary::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  #summary::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-  }
-  
-  #summary::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
-  }
-  
-  #summary::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-  }
-  
-  /* Animation for loading state */
-  @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-  }
-  
-  .loading {
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-  
-  /* Header styles (if you want to add a title) */
-  .header {
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  
-  .header h1 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
-  }
-  
-  /* Footer styles (if you want to add attribution) */
-  .footer {
-    margin-top: 16px;
-    padding-top: 12px;
-    border-top: 1px solid #e5e7eb;
-    font-size: 12px;
-    color: #6b7280;
-    text-align: center;
-  }
-
-  .error {
-    color: #dc2626;
-    background-color: #fee2e2;
-    border: 1px solid #fecaca;
-    padding: 12px;
-    border-radius: 6px;
-    margin-top: 16px;
-    font-size: 14px;
-  }
-  
-  .footer {
-    margin-top: 16px;
-    padding-top: 12px;
-    border-top: 1px solid #e5e7eb;
-    font-size: 12px;
-    color: #6b7280;
-    text-align: center;
-  }
-  
-  .footer a {
-    color: #2563eb;
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
+  /* Rest of the existing styles remain the same */

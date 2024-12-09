@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Website Summarizer</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div class="header">
     <h1>Website Summarizer</h1>
   </div>
-  
+
+  <div class="style-selector">
+    <label class="style-option">
+      <input type="radio" name="style" value="elaborate" checked>
+      <span class="style-label">Elaborate</span>
+      <span class="style-description">Detailed technical analysis for specialists</span>
+    </label>
+    
+    <label class="style-option">
+      <input type="radio" name="style" value="executive">
+      <span class="style-label">Executive</span>
+      <span class="style-description">Bullet-point summary for decision makers</span>
+    </label>
+    
+    <label class="style-option">
+      <input type="radio" name="style" value="simplified">
+      <span class="style-label">Simplified</span>
+      <span class="style-description">Easy-to-understand overview for general audience</span>
+    </label>
+  </div>
+
   <button id="summarize">Summarize This Page</button>
   <div id="summary"></div>
   <div id="error" class="error" style="display: none;"></div>
@@ -16,7 +35,7 @@
   <div class="footer">
     <a href="#" id="openOptions">Configure API Key</a>
   </div>
-  
+
   <script src="popup.js"></script>
 </body>
 </html>
