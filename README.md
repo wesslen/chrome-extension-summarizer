@@ -2,6 +2,8 @@
 
 A Chrome extension that summarizes web pages using AI. The extension converts webpage content to markdown and then uses Claude (Anthropic's AI) to generate concise summaries with three different styles for different audiences.
 
+![](./assets/example.png)
+
 ## Features
 
 - Convert webpages to markdown using r.jina.ai
