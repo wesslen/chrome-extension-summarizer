@@ -13,6 +13,63 @@
     background-color: #ffffff;
   }
   
+  /* Markdown Content Styles */
+  .markdown-body {
+    margin-top: 16px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #f8fafc;
+    border-radius: 6px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .markdown-body h1 {
+    font-size: 1.5em;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .markdown-body h2 {
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .markdown-body p {
+    margin-bottom: 12px;
+  }
+  
+  .markdown-body ul, .markdown-body ol {
+    margin-bottom: 12px;
+    padding-left: 24px;
+  }
+  
+  .markdown-body li {
+    margin-bottom: 4px;
+  }
+  
+  .markdown-body strong {
+    color: #1e40af;
+  }
+  
+  .markdown-body blockquote {
+    border-left: 4px solid #94a3b8;
+    padding-left: 12px;
+    margin: 12px 0;
+    color: #4b5563;
+  }
+  
+  .markdown-body code {
+    background-color: #e2e8f0;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  
   /* Style Selector styles */
   .style-selector {
     margin-bottom: 16px;
@@ -34,35 +91,4 @@
     background-color: #f1f5f9;
   }
   
-  .style-option input[type="radio"] {
-    margin-right: 8px;
-  }
-  
-  .style-label {
-    font-weight: 600;
-    margin-right: 8px;
-    color: #1e293b;
-  }
-  
-  .style-description {
-    display: block;
-    margin-left: 24px;
-    font-size: 12px;
-    color: #64748b;
-  }
-  
-  /* Existing button styles */
-  #summarize {
-    width: 100%;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #2563eb;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  /* Rest of the existing styles remain the same */
+  /* Rest of existing styles remain the same */

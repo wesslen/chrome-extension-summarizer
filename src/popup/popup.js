@@ -1,3 +1,14 @@
+import { marked } from 'marked';
+
+// Configure marked options for security
+marked.use({
+  headerIds: false,
+  mangle: false,
+  headerPrefix: '',
+  breaks: true,
+  gfm: true
+});
+
 // Check if API key is set
 async function checkApiKey() {
   return new Promise((resolve) => {
@@ -39,6 +50,20 @@ function loadLastStyle() {
       if (radio) radio.checked = true;
     }
   });
+}
+
+// Render markdown content
+function renderMarkdown(content) {
+  const summaryDiv = document.getElementById('summary');
+  try {
+    const htmlContent = marked.parse(content);
+    summaryDiv.innerHTML = htmlContent;
+    summaryDiv.className = 'markdown-body';
+  } catch (error) {
+    console.error('Markdown parsing error:', error);
+    summaryDiv.textContent = content;
+    summaryDiv.className = '';
+  }
 }
 
 // Open options page
@@ -86,8 +111,7 @@ document.getElementById('summarize').addEventListener('click', async () => {
       summaryDiv.textContent = '';
       summaryDiv.className = '';
     } else {
-      summaryDiv.textContent = response.summary;
-      summaryDiv.className = '';
+      renderMarkdown(response.summary);
     }
   } catch (error) {
     showError(error.message);

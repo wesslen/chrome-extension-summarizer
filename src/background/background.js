@@ -3,13 +3,50 @@ let config = {
   model: 'claude-3-haiku-20240307'
 };
 
-// Prompt templates for different styles
+// Enhanced prompt templates with markdown instructions
 const PROMPT_TEMPLATES = {
-  elaborate: `Analyze this content in detail, focusing on technical aspects and providing comprehensive insights. Target audience: technical specialists and domain experts.\n\nContent:\n`,
+  elaborate: `Analyze this content in detail and provide a comprehensive summary using markdown formatting. Follow these guidelines:
+
+1. Start with a level-1 header "# Detailed Analysis"
+2. Include a brief overview paragraph
+3. Use level-2 headers (##) for main sections
+4. Put key concepts and important terms in **bold**
+5. Use bullet points for listing details
+6. Include relevant quotes with > blockquotes if applicable
+7. Target audience: technical specialists and domain experts
+
+Format the response using proper markdown syntax throughout.
+
+Content:\n`,
   
-  executive: `Provide a concise executive summary with key points in bullet format. Focus on main takeaways and business implications. Target audience: decision-makers and executives.\n\nContent:\n`,
+  executive: `Provide an executive summary using clear markdown formatting. Follow these guidelines:
+
+1. Start with a level-1 header "# Executive Summary"
+2. Include a **Key Takeaways** section at the top
+3. Use bullet points for main points
+4. Put metrics and important findings in **bold**
+5. Use level-2 headers (##) for different sections
+6. Keep sentences concise and focused
+7. Target audience: decision-makers and executives
+
+Format the response using proper markdown syntax throughout.
+
+Content:\n`,
   
-  simplified: `Explain this content in simple, easy-to-understand terms. Use short sentences and avoid technical jargon. Target audience: general readers.\n\nContent:\n`
+  simplified: `Explain this content in simple terms using clear markdown formatting. Follow these guidelines:
+
+1. Start with a level-1 header "# Simple Overview"
+2. Write short, clear paragraphs
+3. Use bullet points for easy reading
+4. Put important ideas in **bold**
+5. Use level-2 headers (##) to organize topics
+6. Avoid technical jargon
+7. Include a "## Key Points" section
+8. Target audience: general readers
+
+Format the response using proper markdown syntax throughout.
+
+Content:\n`
 };
 
 // Update config whenever storage changes
